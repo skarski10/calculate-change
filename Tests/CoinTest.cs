@@ -67,7 +67,7 @@ namespace CoinTestApp
 
             Assert.Equal(changeResult, result);
         }
-
+        
         public void Dispose()
         {
           Coins.DeleteAll();
