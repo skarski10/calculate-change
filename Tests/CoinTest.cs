@@ -27,6 +27,49 @@ namespace CoinTestApp
       Coins newCoin = new Coins(change);
       int result = newCoin.GetNickel();
       Assert.Equal(changeResult, result);
+      Coins.ClearAll();
+    }
+
+    [Fact]
+    public void IsCoin_ReturningDimes_Dimes()
+    {
+      int change = 10;
+      int changeResult = change / 10;
+
+      Coins newCoin = new Coins(change);
+      int result = newCoin.GetDime();
+      Assert.Equal(changeResult, result);
+      Coins.ClearAll();
+    }
+
+    [Fact]
+    public void IsCoin_ReturningQuarter_Quarter()
+    {
+      int change = 25;
+      int changeResult = change / 25;
+
+      Coins newCoin = new Coins(change);
+      int result = newCoin.GetQuarter();
+      Assert.Equal(changeResult, result);
+      Coins.ClearAll();
+    }
+
+    [Fact]
+    public void IsCoin_ReturningAll_All()
+    {
+      int change = 41;
+      List<int> changeResult = new List<int>();
+      changeResult.Add(1);
+      changeResult.Add(1);
+      changeResult.Add(1);
+      changeResult.Add(1);
+
+
+      Coins newCoin = new Coins(change);
+      List<int> result = Coins.GetAll();
+
+      Assert.Equal(changeResult, result);
+      Coins.ClearAll();
     }
   }
 }
